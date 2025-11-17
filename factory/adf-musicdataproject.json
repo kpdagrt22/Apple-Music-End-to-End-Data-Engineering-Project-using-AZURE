@@ -1,0 +1,9 @@
+{
+	"name": "adf-musicdataproject",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1e155d23-f05f-4a66-8c79-5b5232ab5a0a",
+		"tenantId": "6a960903-8598-468b-9151-2b1e80a6de6e"
+	}
+}
