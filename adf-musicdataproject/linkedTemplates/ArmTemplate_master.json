@@ -1,0 +1,84 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-musicdataproject"
+		},
+		"AzureDataLakeStoragels_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStoragels'"
+		},
+		"sqldbls_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'sqldbls'"
+		},
+		"AzureDataLakeStoragels_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storageaccountkp22.dfs.core.windows.net/"
+		},
+		"sqldbls_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sqlserverprojectmusic.database.windows.net"
+		},
+		"sqldbls_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqldb"
+		},
+		"sqldbls_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adminfuturense"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf-musicdataproject_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStoragels_accountKey": {
+						"value": "[parameters('AzureDataLakeStoragels_accountKey')]"
+					},
+					"sqldbls_password": {
+						"value": "[parameters('sqldbls_password')]"
+					},
+					"AzureDataLakeStoragels_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStoragels_properties_typeProperties_url')]"
+					},
+					"sqldbls_properties_typeProperties_server": {
+						"value": "[parameters('sqldbls_properties_typeProperties_server')]"
+					},
+					"sqldbls_properties_typeProperties_database": {
+						"value": "[parameters('sqldbls_properties_typeProperties_database')]"
+					},
+					"sqldbls_properties_typeProperties_userName": {
+						"value": "[parameters('sqldbls_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

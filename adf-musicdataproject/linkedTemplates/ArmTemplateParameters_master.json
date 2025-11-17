@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-musicdataproject"
+		},
+		"AzureDataLakeStoragels_accountKey": {
+			"value": ""
+		},
+		"sqldbls_password": {
+			"value": ""
+		},
+		"AzureDataLakeStoragels_properties_typeProperties_url": {
+			"value": "https://storageaccountkp22.dfs.core.windows.net/"
+		},
+		"sqldbls_properties_typeProperties_server": {
+			"value": "sqlserverprojectmusic.database.windows.net"
+		},
+		"sqldbls_properties_typeProperties_database": {
+			"value": "sqldb"
+		},
+		"sqldbls_properties_typeProperties_userName": {
+			"value": "adminfuturense"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
