@@ -136,9 +136,14 @@
 			{
 				"name": "last_cdc_update",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "max_cdc",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -154,7 +159,7 @@
 							{
 								"name": "cdc",
 								"value": {
-									"value": "kpjjo",
+									"value": "@activity('max_cdc').output.resultSets[0].rows[0].max_cdc",
 									"type": "Expression"
 								}
 							}
@@ -230,7 +235,7 @@
 						{
 							"type": "Query",
 							"text": {
-								"value": "SELECT MAX @{pipeline().parameters.cdc} as cdc \nFROM @{pipeline().parameters.schema}.@{pipeline().parameters.table}",
+								"value": "@concat(\n    'SELECT max(', pipeline().parameters.cdc, ') AS max_cdc FROM ',\n    pipeline().parameters.schema, '.', pipeline().parameters.table\n)\n",
 								"type": "Expression"
 							}
 						}
