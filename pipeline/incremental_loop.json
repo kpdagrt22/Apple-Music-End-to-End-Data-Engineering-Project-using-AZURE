@@ -261,7 +261,10 @@
 												"type": "DatasetReference",
 												"parameters": {
 													"container": "bronze",
-													"folder": "monitor",
+													"folder": {
+														"value": "@{item().table}_cdc",
+														"type": "Expression"
+													},
 													"file": "empty.json"
 												}
 											}
@@ -302,7 +305,7 @@
 												{
 													"type": "Query",
 													"text": {
-														"value": "@concat(\n    'SELECT max(', item().cdc, ') AS max_cdc FROM ',\n    item().schema, '.', item().table\n)\n",
+														"value": "@concat(\n    'SELECT max(', item().cdc_col, ') AS max_cdc FROM ',\n    item().schema, '.', item().table\n)\n",
 														"type": "Expression"
 													}
 												}
