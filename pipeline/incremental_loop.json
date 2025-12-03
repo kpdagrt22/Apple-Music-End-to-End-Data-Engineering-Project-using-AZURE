@@ -326,8 +326,7 @@
 					{
 						"activity": "Loop",
 						"dependencyConditions": [
-							"Failed",
-							"Succeeded"
+							"Failed"
 						]
 					}
 				],
