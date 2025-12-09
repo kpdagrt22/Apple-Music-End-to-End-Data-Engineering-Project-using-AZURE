@@ -43,7 +43,8 @@ Notebooks and DLT definitions versioned in Git.
 Databricks Asset Bundles manage environment deployments.
 
 ---
-
+## 3. Repository Structure
+```
 /
 ├── adf/
 │ ├── pipelines/
@@ -80,7 +81,7 @@ Databricks Asset Bundles manage environment deployments.
 │
 └── README.md
 
-
+```
 ---
 
 ## 4. Pipeline Mechanics
@@ -171,5 +172,5 @@ Databricks Asset Bundles manage environment deployments.
 
 
 
-## 3. Repository Structure
+
 
