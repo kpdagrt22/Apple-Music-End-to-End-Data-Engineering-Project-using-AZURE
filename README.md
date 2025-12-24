@@ -7,8 +7,13 @@ The design reflects production lakehouse standards: modular ingestion, governed 
 
 ## 1. Architectural Overview
 
+### 1.0 Overall Project Architecture
+
+The following diagram presents the end-to-end Azure lakehouse solution, including ingestion with ADF, storage in ADLS, transformations in Databricks and Delta Live Tables, governance via Unity Catalog, and consumption through Synapse and Power BI.[conversation_history:0]  
+![Overall Azure Lakehouse Architecture](assets/arch.png)
+
 **Pattern:** Medallion Architecture (Bronze → Silver → Gold) on Delta Lake  
-**Stack:** Azure SQL DB, Azure Data Factory, ADLS Gen2, Databricks (PySpark, Autoloader, DLT), Unity Catalog, Synapse, Power BI, GitHub, Key Vault, Managed Identities[conversation_history:0]
+**Stack:** Azure SQL DB, Azure Data Factory, ADLS Gen2, Databricks (PySpark, Autoloader, DLT), Unity Catalog, Synapse, Power BI, GitHub, Key Vault, Managed Identities.[conversation_history:0]
 
 **Flow**
 1. Azure SQL DB → ADF → Bronze (raw, incremental, CDC-aware)  
