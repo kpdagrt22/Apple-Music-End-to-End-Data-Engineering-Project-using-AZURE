@@ -876,6 +876,56 @@ Metadata-driven architecture supports domain-oriented data products with central
 ## 🎓 Competencies Demonstrated
 
 ### Azure Ecosystem Expertise
-- **Azure Data Factory**: Dynamic pipeline authoring, expression language, metadata-driven patterns, CI/CD with ARM templates
-- **Azure Databricks**: Cluster configuration, Unity Catalog administration, Delta Live Tables, Autoloader, Databricks Asset Bundles
-- **Azure Data Lake Storage Gen2**:
+
+- **Azure Data Lake Storage Gen2**: Hierarchical namespace design, POSIX-style ACLs, optimized layout for Bronze/Silver/Gold separation, secure integration with managed identities, cost-aware storage tiering  
+- **Azure Synapse Analytics**: Serverless SQL over Delta Lake, external tables, separation of compute and storage, ad-hoc analytics on curated Gold datasets  
+- **Azure Key Vault**: Centralized secret management, Databricks–ADF–Synapse integration via managed identities, zero hard-coded credentials  
+- **Azure Monitor & Log Analytics**: Pipeline observability, metric-based alerting, SLA monitoring, cross-service operational telemetry correlation  
+
+### Data Engineering & Lakehouse Architecture
+
+- **Medallion Architecture**: Contract-driven separation of raw, refined, and curated layers with deterministic data promotion  
+- **Delta Lake Internals**: ACID transactions, merge semantics, time travel, vacuum strategy, schema enforcement and evolution  
+- **Incremental Processing**: CDC ingestion, watermark control tables, idempotent reprocessing, replay safety  
+- **Dimensional Modeling**: Star schema design, SCD Type-2 handling, surrogate key management, analytical query optimization  
+
+### Distributed Processing & Streaming
+
+- **PySpark**: Large-scale transformations, window functions, broadcast joins, adaptive query execution  
+- **Structured Streaming**: Exactly-once guarantees, checkpointing, late-arrival handling, backpressure-aware ingestion  
+- **Autoloader**: Notification-driven ingestion, schema inference, high-throughput landing patterns  
+
+### Data Quality & Reliability Engineering
+
+- **Declarative Data Quality**: Expectation-driven validation using Delta Live Tables  
+- **Failure Isolation**: Record-level quarantining, quality metric surfacing, controlled data drops  
+- **Operational Runbooks**: Deterministic recovery paths, replay strategies, incident triage workflows  
+
+### CI/CD & Platform Engineering
+
+- **GitHub Actions**: Multi-environment CI/CD (dev → test → prod), gated deployments, artifact promotion  
+- **Databricks Asset Bundles**: Environment-aware job and pipeline definitions, reproducible deployments  
+- **Infrastructure as Code**: Terraform/Bicep provisioning, immutable infrastructure principles  
+
+### Security, Governance & Compliance
+
+- **Unity Catalog**: Centralized metadata management, fine-grained RBAC, automated lineage tracking  
+- **Least-Privilege Access**: Catalog-, schema-, table-, and view-level authorization  
+- **Auditability & Lineage**: End-to-end traceability from source systems to BI consumption  
+
+### Performance & Cost Optimization
+
+- **Query Optimization**: Partitioning strategies, Z-ordering, liquid clustering  
+- **Storage Efficiency**: Controlled file sizing, vacuum retention policies, lifecycle management  
+- **Compute Economics**: Job vs interactive clusters, workload isolation, DBU cost normalization  
+
+### Analytics Enablement
+
+- **BI Readiness**: Analytics-optimized Gold tables, stable schemas, semantic consistency  
+- **Self-Service Analytics**: Secure analyst access without pipeline-level exposure  
+
+### Professional Capability Signal
+
+- End-to-end ownership from ingestion to consumption  
+- Production-grade engineering, not tutorial patterns  
+- Enterprise constraints treated as first-class: governance, security, cost, reliability
